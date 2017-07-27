@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="421.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myplayer.FXMLDocumentController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="play" mnemonicParsing="false" onAction="#play" text="Play">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Slider fx:id="timeSlider" prefHeight="16.0" prefWidth="270.0" />
+            <Label fx:id="Time" text="Time">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#fullScreen" text="Full Screen">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Vol ">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Slider fx:id="volume" prefHeight="16.0" prefWidth="49.0" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <Pane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutY="34.0" />
+            <HBox alignment="CENTER" layoutX="-7.0" prefHeight="29.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="openFile" mnemonicParsing="false" onAction="#chooseFile" text="open a video or audio" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
